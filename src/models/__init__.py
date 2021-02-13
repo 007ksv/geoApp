@@ -1,3 +1,4 @@
-from .models import AddressDetailModel, AddressModel, CoordinatesModel
+from .geocoding import GeocodingDetailModel, GeocodingModel
+from .reverse_geocoding import ReverseGeocodingModel
 
-__all__ = [AddressModel, AddressDetailModel, CoordinatesModel]
+__all__ = [GeocodingModel, GeocodingDetailModel, ReverseGeocodingModel]
