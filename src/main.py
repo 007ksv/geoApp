@@ -1,34 +1,27 @@
 from fastapi import FastAPI
 
-from .models import AddressDetailModel, AddressModel, CoordinatesModel
+from .models import GeocodingDetailModel, GeocodingModel, ReverseGeocodingModel
 from .utils.address import get_address_details, get_reverse
+from .utils.response import create_response
 
 app = FastAPI(debug=True)
 
 
-def create_response(success, data):
-    if success:
-        res = {"success": success, "data": data}
-    else:
-        res = {"success": success, "data": {}}
-    return res
-
-
 @app.post("/address-detail")
-def get_address_detail(adress: AddressModel):
+def get_address_detail(adress: GeocodingModel):
     addr = adress.address
     address_detail = get_address_details(addr)
     if address_detail:
-        response = AddressDetailModel(**address_detail)
-        return create_response(success=True, data=response)
+        response = GeocodingDetailModel(**address_detail)
+        return create_response(success=True, data=response.dict())
     return create_response(success=True, data={})
 
 
 @app.post("/reverse")
-def get_reverse_details(coordinates: CoordinatesModel):
+def get_reverse_geocoding_details(coordinates: ReverseGeocodingModel):
     coords = (coordinates.latitude, coordinates.longitude)
     address = get_reverse(coords)
     if address:
-        response = AddressModel(**address)
+        response = GeocodingModel(**address)
         return create_response(success=True, data=response.dict())
     return create_response(success=True, data={})
