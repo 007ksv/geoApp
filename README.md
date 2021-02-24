@@ -1,6 +1,6 @@
 # geoApp Backend
 ***
-A backend API project of geoAPP using [FastAPI]("https://fastapi.tiangolo.com/") framework
+A backend API project of geoAPP using [FastAPI] [1] framework
 
 
 #### Requirements
@@ -43,3 +43,4 @@ A backend API project of geoAPP using [FastAPI]("https://fastapi.tiangolo.com/")
     $ poetry export -f requirements.txt --without-hashes --dev -o requirements-dev.txt
     ```
 
+[1]: https://fastapi.tiangolo.com/
