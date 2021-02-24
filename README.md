@@ -1,6 +1,6 @@
 # geoApp Backend
 ***
-A backend API project of geoAPP using [FastAPI] [1] framework
+A backend API project of geoAPP using [FastAPI][1] framework
 
 
 #### Requirements
