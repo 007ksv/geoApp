@@ -1,1 +1,1 @@
-web: uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
+web: uvicorn src.main:app --reload --host 0.0.0.0 --port 80
