@@ -42,5 +42,9 @@ A backend API project of geoAPP using [FastAPI][1] framework
     $ poetry export -f requirements.txt --without-hashes -o requirements.txt
     $ poetry export -f requirements.txt --without-hashes --dev -o requirements-dev.txt
     ```
+### Test web app
+[geoApp][2]
+
 
 [1]: https://fastapi.tiangolo.com/
+[2]: https://fast-api-geoapp.herokuapp.com/v1/
